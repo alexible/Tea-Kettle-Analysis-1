@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Electric Kettle Energy Use Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e0e0e0;
+        }
+
+        .chart-bar {
+            height: 20px;
+            background-color: #3498db;
+            display: inline-block;
+        }
+
+        .chart-label {
+            margin-left: 10px;
+        }
+
+        .summary {
+            background: #dff0d8;
+            padding: 15px;
+            border: 1px solid #a3c293;
+            border-radius: 5px;
+        }
+
+        .file-upload {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Electric Kettle Comparison: Scenario 1 vs Scenario 2</h1>
+
+    <div class="file-upload">
+        <h2>File Browser</h2>
+
+    </div>
+
+    <h2>Assumptions</h2>
+    <ul>
+        <li>Electric kettle power: 1500W</li>
+        <li>Electricity cost: $0.15 per kWh</li>
+        <li>Starting water temperature: 20°C (cold tap water)</li>
+        <li>Scenario 2: Water remains at 67°C after 40 minutes (summer condition)</li>
+    </ul>
+
+    <h2>Energy Use Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Scenario</th>
+                <th>Boil Cycle</th>
+                <th>Water Volume (L)</th>
+                <th>Temp Change (°C)</th>
+                <th>Energy (kWh)</th>
+                <th>Cost (USD)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Scenario 1</td>
+                <td>First Boil</td>
+                <td>0.5</td>
+                <td>80</td>
+                <td>0.0465</td>
+                <td>$0.007</td>
+            </tr>
+            <tr>
+                <td>Second Boil</td>
+                <td>0.5</td>
+                <td>80</td>
+                <td>0.0465</td>
+                <td>$0.007</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Total</strong></td>
+                <td><strong>0.093</strong></td>
+                <td><strong>$0.014</strong></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Scenario 2</td>
+                <td>Initial Boil</td>
+                <td>0.7</td>
+                <td>80</td>
+                <td>0.0651</td>
+                <td>$0.0098</td>
+            </tr>
+            <tr>
+                <td>Reheat Remaining (0.4L from 67°C)</td>
+                <td>0.4</td>
+                <td>33</td>
+                <td>0.0183</td>
+                <td>$0.0027</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Total</strong></td>
+                <td><strong>0.0834</strong></td>
+                <td><strong>$0.0125</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Energy Usage Bar Chart (Visual)</h2>
+    <div>
+        <div><strong>Scenario 1:</strong>
+            <div class="chart-bar" style="width: 93px;"></div>
+            <span class="chart-label">0.093 kWh</span>
+        </div>
+        <div><strong>Scenario 2:</strong>
+            <div class="chart-bar" style="width: 83px; background-color: #2ecc71;"></div>
+            <span class="chart-label">0.083 kWh</span>
+        </div>
+    </div>
+
+    <h2>Summary</h2>
+    <div class="summary">
+        <p><strong>Scenario 2</strong> is slightly more energy efficient and cheaper overall. Here's why:</p>
+        <ul>
+            <li>The second boil only reheats pre-boiled water that remains at <strong>67°C</strong> (summer conditions).
+            </li>
+            <li>There’s no need to reheat cold water the second time, saving energy.</li>
+            <li>Total energy savings compared to Scenario 1: ~0.0096 kWh (~0.14 cents).</li>
+        </ul>
+        <p><strong>However</strong>, Scenario 1 avoids heating excess water, which may be more efficient in other
+            seasons or if
+            water is not reused.</p>
+        <p>Ultimately, Scenario 2 is more cost-effective in this specific case.</p>
+    </div>
+
+</body>
+
+</html>
